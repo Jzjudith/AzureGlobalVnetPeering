@@ -12,15 +12,15 @@ resource "azurerm_network_interface" "nic1" {
   }
 }
 
-# asia nic
+# korea nic
 resource "azurerm_network_interface" "nic2" {
-  name                = "asia-nic"
-  location            = var.asia
+  name                = "korea-nic"
+  location            = var.korea
   resource_group_name = azurerm_resource_group.main.name
 
   ip_configuration {
-    name                          = "asia-ipconfig"
-    subnet_id                     = azurerm_subnet.asiasub.id
+    name                          = "korea-ipconfig"
+    subnet_id                     = azurerm_subnet.koreasub.id
     private_ip_address_allocation = "Dynamic"
 
   }
@@ -79,11 +79,11 @@ resource "azurerm_linux_virtual_machine" "mgmt" {
 
 }
 
-# asia vm
-resource "azurerm_linux_virtual_machine" "asia" {
+# korea vm
+resource "azurerm_linux_virtual_machine" "korea" {
   name                  = "asiasevm"
   resource_group_name   = azurerm_resource_group.main.name
-  location              = var.asia
+  location              = var.korea
   size                  = "Standard_B1s"
   admin_username        = "devlab"
   admin_password        = "Password123"
