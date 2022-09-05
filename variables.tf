@@ -8,7 +8,7 @@ variable "europe" {
   default = "North Europe"
 }
 
-variable "asia" {
+variable "korea" {
   type    = string
   default = "Korea South"
 }
